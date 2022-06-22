@@ -24,11 +24,16 @@ function isNotUneven(numero)
     }
 }
 
-const userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
-console.log('Hai scelto il numero: ' + userNumber);
-    if(userNumber > 5){
-        alert("Il numero è maggiore di 5, ricarica!")
+let userChoice = prompt('Scegli pari o dispari')
+    while((userChoice != 'pari') && (userChoice != 'dispari')){
+        userChoice = prompt('Scegli pari o dispari');
     }
+
+let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+    while( (userNumber > 5)||(userNumber < 1) ){
+        userNumber = parseInt(prompt('ATTENZIONE! Inserisci un numero da 1 a 5'));
+    }
+console.log('Hai scelto il numero: ' + userNumber);
 
 const computerNumber = Math.round(Math.random() * 5);
 console.log('Il computer ha scelto il numero: ' + computerNumber);
@@ -38,7 +43,15 @@ console.log('La somma dei due numeri è: ' + resultNumber);
 
 let resultGame = isNotUneven(resultNumber);
 if(resultGame == false){
-    console.log('Vince il pari');
+    if(userChoice == 'pari'){
+        console.log('Vince il pari - Hai vinto');
+    } else {
+        console.log('Vince il pari - Hai perso');
+    }
 } else if (resultGame == true){
-    console.log('Vince il dispari');
+    if(userChoice == 'dispari'){
+        console.log('Vince il dispari - Hai vinto');
+    } else {
+        console.log('Vince il dispari - Hai perso');
+    }
 }
