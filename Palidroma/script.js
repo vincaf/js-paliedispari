@@ -11,18 +11,21 @@ let char;
 // Dichiarazione variabile parola inversa
 let invertedWord = "";
 
-// Inizializzazione variabile index per ciclo while sulla parola inserita
-let i = userWord.length - 1;
+function wordInverse (parola){
+  let i = userWord.length - 1;
 
-// Ciclo while per riscrivere lettera per lettera la parola al contrario
-while (i >= 0) {
-  char = userWord[i];
-  invertedWord += char;
-  console.log(char);
-  i--;
+  while (i >= 0) {
+    char = userWord[i];
+    invertedWord += char;
+    console.log(char);
+    i--;
+  }
+
+  return invertedWord;
 }
 
-console.log('La parola invertita è: ' + invertedWord);
+wordInverse(userWord);
+console.log('La parola al contrario è: ' + invertedWord);
 
 // Condizione per verificare se la parola è palindroma
 if(userWord == invertedWord){
