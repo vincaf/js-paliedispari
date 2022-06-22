@@ -22,3 +22,12 @@ function isNotUneven(numero)
     return "";
     }
 }
+
+const userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+console.log('Hai scelto il numero: ' + userNumber);
+    if(userNumber > 5){
+        alert("Il numero è maggiore di 5, ricarica!")
+    }
+
+const computerNumber = Math.round(Math.random() * 5);
+console.log('Il computer ha scelto il numero: ' + computerNumber);
